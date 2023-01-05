@@ -1,0 +1,89 @@
+<div class="container-fluid" style="font-size: small;">
+<div class=" row bg-dark text-light">
+    <div class="ps-5 pb-2">
+        Your Cart
+    </div>
+    <div  class="ps-5 pt-3 pb-2">
+        <span style="font-size: small;">Your products</span><button type="button" class="btn btn-outline-danger" style="font-size: small;"> < Continue Shopping</button>
+    </div>
+</div>
+<div class="clearfix">
+<div class="row">
+    <div class="col">
+        <img src="../../assets/01.jpg" style="width:  150px; height:  120px;"/>
+    </div>
+    <div class="col">
+        <div class="fw-bolder">Women Colorblock Sneakers</div>
+        <div>size: 8.5</div>
+        <div>color: white</div>
+        <div class="text-primary">{{price1 | currency}}</div>
+    </div>
+    <div class="col">
+        <div>Quantity</div>
+        <div class="input-group mb-3">
+  <!-- <label class="input-group-text" for="inputGroupSelect01">Options</label> -->
+  <select class="form-select" id="inputGroupSelect01">
+    <option value="1" selected>1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+</div>
+        <div class="text-danger">
+        <i class="fa-solid fa-remove fa-1x" style="padding: 5px;"></i>
+        <button type="button" class="btn btn-outline-danger" style="border: 0px;">Remove</button>
+        </div>
+    </div>
+    <div class="card border border-2 col-md-6 float-md-end mb-3 ms-md-3" style="width: 200px; font-size: x-small;" >
+        <div class="card-body">
+          <h5 class="card-title">Sub Total</h5>
+          <p class="card-text" style="color: #6f42c1;">{{price1+price2 | currency}}</p>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary">Note</button>
+            <span style="padding: 5px;">Additional Comments</span>
+            <div  style="padding: 5px;">
+                <textarea style="height: 50px; width: 150px;"></textarea>
+                <!-- <label for="floatingTextarea2">Comments</label> -->
+              </div>
+        </div>
+        <div>
+            <div style="padding: 5px;">Apply PromoCode<button><i class="fa-solid fa-angle-up"></i></button> </div>
+            <input placeholder="Promo Code" style="padding: 5px;"/><br/><br/>
+            <button type="button" class="btn btn-outline-danger" style="font-size: small; padding: 5px;">Apply PromoCode</button>
+            <div style="padding: 5px; font-weight: bolder;">Shipping Estimates<button><i class="fa-solid fa-angle-down"></i></button> </div>
+        </div>
+        <div class="card-body">
+          <button type="button" class="btn btn-danger">Proceed to Checkout</button>
+        </div>
+      </div>
+    <!-- <div class="col">cart</div> -->
+</div>
+<div class="row">
+    <div class="col">
+        <img src="../../assets/02.jpg" style="width:  150px; height:  120px;"/>
+    </div>
+    <div class="col">
+        <div class="fw-bolder">Cotton Polo Regular Fit</div>
+        <div>Size: 42</div>
+        <div>color: white</div>
+        <div class="text-primary">{{price2 | currency}}</div>
+    </div>
+    <div class="col">
+                <div>Quantity</div>
+        <div class="input-group mb-3">
+  <!-- <label class="input-group-text" for="inputGroupSelect01">Options</label> -->
+  <select class="form-select" id="inputGroupSelect01">
+    <option value="1" selected>1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+</div>
+<div class="text-danger">
+    <i class="fa-solid fa-remove fa-1x" style="padding: 5px;"></i>
+    <button type="button" class="btn btn-outline-danger" style="border: 0px;">Remove</button>
+    </div>
+    </div>
+    <!-- <div class="col">cart</div> -->
+</div>
+</div>
+</div>
