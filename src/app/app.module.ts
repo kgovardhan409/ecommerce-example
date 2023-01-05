@@ -9,7 +9,10 @@ import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BrandsComponent,
+    CartComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
