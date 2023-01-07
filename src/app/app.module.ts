@@ -6,13 +6,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrandsComponent } from './brands/brands.component';
 import { CartComponent } from './cart/cart.component';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { BannerComponent } from './banner/banner.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BrandsComponent,
     CartComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent,
+    BannerComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
