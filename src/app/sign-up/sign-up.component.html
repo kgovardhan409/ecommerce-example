@@ -1,34 +1,28 @@
-<!-- <div class="container">
+<div class="container">
 
-    <h2>Reactive Form</h2>
-  
-    <form [formGroup]="sign-up" #formDir="ngForm">
-  
-      <div [hidden]="formDir.submitted">
-  
-        <div class="cross-validation" [class.cross-validation-error]="sign-up.errors?.['identityRevealed'] && (sign-up.touched || sign-up.dirty)">
-          <div class="form-group">
-  
-            <label for="name">Name</label>
-            <input type="text" id="name" class="form-control"
-                  formControlName="name" required>
-  
-            <div *ngIf="name.invalid && (name.dirty || name.touched)"
-                class="alert alert-danger">
-  
-              <div *ngIf="name.errors?.['required']">
-                Name is required.
-              </div>
-              <div *ngIf="name.errors?.['minlength']">
-                Name must be at least 4 characters long.
-              </div>
-              <div *ngIf="name.errors?.['forbiddenName']">
-                Name cannot be Bob.
-              </div>
-            </div>
+  <h2>Reactive Form</h2>
+
+  <form [formGroup]="signupform">
+
+    <div>
+
+      <div class="cross-validation">
+        <div class="form-group">
+
+          <label for="name">Name</label>
+          <input type="text" id="username" name="username" class="form-control" 
+          formControlName="username" />
+
+          <div *ngIf="f['username'].errors">
+              username is required!
           </div>
-  
-          <div class="form-group">
+        </div>
+      </div>
+  </div>
+  </form>
+  </div>
+
+  <!-- <div class="form-group">
             <label for="alterEgo">Alter Ego</label>
             <input type="text" id="alterEgo" class="form-control"
                 formControlName="alterEgo">
@@ -41,13 +35,13 @@
             </div>
           </div>
   
-          <div *ngIf="heroForm.errors?.['identityRevealed'] && (sign-up.touched || sign-up.dirty)" class="cross-validation-error-message alert alert-danger">
+          <div *ngIf="heroForm.errors?.['identityRevealed'] && (signupform.touched || signupform.dirty)" class="cross-validation-error-message alert alert-danger">
               Name cannot match alter ego.
           </div>
         </div>
   
         <div class="form-group">
-          <label for="power">sign-up</label>
+          <label for="power">signupform</label>
           <select id="power" class="form-control"
               formControlName="power" required>
             <option *ngFor="let p of powers" [value]="p">{{p}}</option>
@@ -56,26 +50,18 @@
           <div *ngIf="power.invalid && power.touched" class="alert alert-danger">
             <div *ngIf="power.errors?.['required']">Power is required.</div>
           </div>
-        </div>
-  
-        <p>Complete the form to enable the Submit button.</p>
+        </div> -->
+
+  <!-- <p>Complete the form to enable the Submit button.</p>
         <button type="submit"
                 class="btn btn-default"
                 [disabled]="heroForm.invalid">Submit</button>
         <button type="button" class="btn btn-default"
-               (click)="formDir.resetForm({})">Reset</button>
-      </div>
-    </form>
-  
-    <div class="submitted-message" *ngIf="formDir.submitted">
-      <p>You've submitted your hero, {{ sign-up.value.name }}!</p>
-      <button type="button" (click)="formDir.resetForm({})">Add new hero</button>
-    </div>
+               (click)="formDir.resetForm({})">Reset</button> -->
+
+
+  <!-- <div class="submitted-message" *ngIf="formDir.submitted">
+    <p>You've submitted your hero, {{ signupform }}!</p>
+    <button type="button" (click)="formDir.resetForm({})">Add new hero</button>
   </div>
-  
-  
-  <!-- 
-  Copyright Google LLC. All Rights Reserved.
-  Use of this source code is governed by an MIT-style license that
-  can be found in the LICENSE file at https://angular.io/license
-  --> -->
+</div> -->

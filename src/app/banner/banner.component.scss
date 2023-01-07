@@ -1,15 +1,18 @@
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.left {
+    // position: absolute;
+    // top: 40%;
+    // left: 10%;
+    // transform: translate(-50%, -50%);
     text-align: left;
+    font-size: 30px;
   }
-  .container {
-    position: relative;
-    text-align: left;
-    color: white;
+  .left h1{
+    font-size: 40px;
+
   }
-  .centered{
-    
-  }
+  // .container {
+  //   position: relative;
+  //   text-align: left;
+  //   color: white;
+  // }
+

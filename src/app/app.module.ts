@@ -9,6 +9,10 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { BannerComponent } from './banner/banner.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { HomeComponent } from './home/home.component';
+import { ItemsComponent } from './items/items.component';
+import { SigninComponent } from './signin/signin.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +22,16 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     FooterComponent,
     HeaderComponent,
     BannerComponent,
-    SignUpComponent
+    SignUpComponent,
+    HomeComponent,
+    ItemsComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
