@@ -1,0 +1,106 @@
+<p>favourites works!</p>
+<div class="container-fluid">
+  <!-- <div class="row bg-dark text-light ps-5 pt-4 pb-4">
+        <p class="d-flex justify-content-center">List of Items You added to Wishlist</p>
+        <button>Signout</button>
+    </div> -->
+  <div class="bg-dark text-light ps-5 pt-3 pb-2 row justify-content-around">
+    <div class="col-lg-3">List of Items You added to Wishlist</div>
+    <div class="col-lg-1">
+      <button class="btn btn-danger">SignOut</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+        div 1 0f 2
+        <div class="col-lg-4 p-4">
+            <div class="card shadow" style="width: 22rem;">
+                <div class="card-body">
+                    <div>
+                        <div class="list-group" style="list-style-type: none; padding: 5px;">
+                            <div class="row">
+                                <div class="col-lg-5 pb-4">
+                                    <img class="rounded-circle" src="../../assets/users.jpg" style="width: 75px; height: 80px"/>
+                                  </div>
+                                  <div class="col-lg-7">
+                                    <div>USER</div>
+                                    <div>User@example.com</div>
+                                  </div>
+                            </div>
+                            <!-- <button type="button" class="list-group-item list-group-item-action p-3">User Details</button> -->
+                            <button type="button" class="list-group-item list-group-item-action p-3">DashBoard</button>
+                            <button type="button" class="list-group-item list-group-item-action p-3"><img src="../../assets/orders.jpg" width="20px" height="15px">Orders</button>
+                            <button type="button" class="list-group-item list-group-item-action p-3"><img src="../../assets/wishlist.jpg" width="20px" height="15px">Wishlist</button>
+                            <button type="button" class="list-group-item list-group-item-action p-3"><img src="../../assets/helpdesk.jpg" width="20px" height="15px">Support Tickets</button>
+                            <button type="button" class="list-group-item list-group-item-action p-3">Account Settings</button>
+                            <button type="button" class="list-group-item list-group-item-action p-3"><img src="../../assets/profile.jpg" width="20px" height="15px">Profile Info</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+      div 2 of 2
+      <div class="row p-4">
+        <div class="col-lg-9">
+          <div class="row align-items-center">
+            <div class="col-lg-3">
+              <img
+                src="../../assets/backpack.jpg"
+                style="width: 150px; height: 120px"
+              />
+            </div>
+            <div class="col-lg-9">
+              <div class="fw-bolder">TH Jeans City Backpack</div>
+              <div>Brand: Tommy Hilfiger</div>
+              <div>color: brown</div>
+              <div class="text-primary">{{ priceb | currency }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <button type="button" class="btn btn-outline-danger py-2">
+            <img
+              src="../../assets/deleteicon.jpg"
+              alt="Delete ICon"
+              width="12px"
+              height="12px"
+            />Remove
+          </button>
+        </div>
+        <!-- <button type="button" class="btn btn-primary">
+                    <img src="https://s30.postimg.org/xjjlfotlt/icon4.png" alt="Icon"/>
+                 </button> -->
+      </div>
+      <div class="row p-4 pb-5">
+        <div class="col-lg-9">
+          <div class="row align-items-center">
+            <div class="col-lg-3">
+              <img
+                src="../../assets/hat.jpg"
+                style="width: 150px; height: 120px"
+              />
+            </div>
+            <div class="col-lg-9">
+              <div class="fw-bolder">3 Color Sun Stash Hat</div>
+              <div>Brand: The North Face</div>
+              <div>color: Pink/Beige/Blue</div>
+              <div class="text-primary">{{ priceh | currency }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <button type="button" class="btn btn-outline-danger py-2">
+            <img
+              src="../../assets/deleteicon.jpg"
+              alt="Delete ICon"
+              width="12px"
+              height="12px"
+            />Remove
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
