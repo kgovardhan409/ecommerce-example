@@ -14,6 +14,7 @@ import { ItemsComponent } from './items/items.component';
 import { SigninComponent } from './signin/signin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FavouritesComponent } from './favourites/favourites.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FavouritesComponent } from './favourites/favourites.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

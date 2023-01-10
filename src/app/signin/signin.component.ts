@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { signIn } from '../models/sign-in.model';
+import { SignInService } from '../services/sign-in.service';
 
 @Component({
   selector: 'app-signin',
@@ -7,9 +9,13 @@ import { Component } from '@angular/core';
 })
 export class SigninComponent {
 
-  myform = {
-    myEmail: '',
-    password: true
+  myform: signIn = {
+    email: '',
+    password: ''
+  }
+
+  constructor(private signService: SignInService){
+
   }
 
   myEmail ?: string;
@@ -17,6 +23,15 @@ export class SigninComponent {
   onSbumit(){
 
     console.log(this.myform);
+
+    this.signService.verifySignIn(this.myform).subscribe(
+      response => {
+        alert("welcome to my page");
+      },
+      error => {
+        alert("Not a valid user");
+      }
+    )
   }
 
 }

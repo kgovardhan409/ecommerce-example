@@ -12,23 +12,25 @@
                     </button>
                 </div>
             </div>
-            <form #signInForm="ngForm" (ngSubmit)="onSbumit()">
+            <form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSbumit()">
                 <div class="my-3 px-3 ">
                     <label for="exampleFormControlInput1" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com" name="emailId" [(ngModel)]="myform.myEmail" required
-                        #myEmail="ngModel" [ngClass]="signInForm.submitted && myEmail.errors ? 'invalid': ''">
-                    <div *ngIf="signInForm.submitted && myEmail.errors" class="text-danger">Please provide a valid email
+                        placeholder="name@example.com" name="emailId" [(ngModel)]="myform.email" 
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required
+                        #email="ngModel" [ngClass]="signInForm.submitted && email.errors ? 'invalid': ''">
+                    <div *ngIf="signInForm.submitted && email.errors" class="text-danger">Please provide a valid email
                         address</div>
                 </div>
                 <div class="mb-3 px-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Password</label>
                     <input class="form-control" type="password" id="exampleFormControlTextarea1" name="password"
-                        [(ngModel)]="signInForm.submitted && myform.password" required #myPassword="ngModel"
-                        [ngClass]="signInForm.submitted && myPassword.errors ? 'invalid': ''"
+                        [(ngModel)]="signInForm.submitted && myform.password" required #password="ngModel"
+                        [ngClass]="signInForm.submitted && password.errors ? 'invalid': ''"
                         placeholder="password" 
                         />
-
+                        <div *ngIf="signInForm.submitted && password.errors" class="text-danger">Please provide a valid password
+                        </div>
                 </div>
                 <div class="d-flex justify-content-between px-3" style="display: flex;">
                     <div class="form-check col">
