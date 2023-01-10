@@ -6,6 +6,7 @@ import {CartComponent} from './cart/cart.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { ItemsComponent } from './items/items.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SigninComponent } from './signin/signin.component';
 
