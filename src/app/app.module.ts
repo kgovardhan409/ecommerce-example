@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { ItemsComponent } from './items/items.component';
 import { SigninComponent } from './signin/signin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FavouritesComponent } from './favourites/favourites.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SignUpComponent,
     HomeComponent,
     ItemsComponent,
-    SigninComponent
+    SigninComponent,
+    FavouritesComponent
   ],
   imports: [
     BrowserModule,
