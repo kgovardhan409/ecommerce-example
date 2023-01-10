@@ -15,6 +15,14 @@
 
 .heart{
     position: absolute;
-    right: 0;
-    top: 70px;
+    right: 54px;
+    font-size: 25px;
+    top: 28px;
+}
+
+.item-main:hover .cartDiv{
+    display: block;
+}
+.cartDiv{
+    display: none;
 }
