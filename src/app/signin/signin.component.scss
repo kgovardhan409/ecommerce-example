@@ -1,0 +1,15 @@
+.header-login{
+    background-color: azure;
+}
+
+.invalid{
+    border: 1px solid red;
+}
+
+.invalid:active{
+    border: 2px solid red;
+}
+
+.valid{
+    border: 1px solid green;
+}

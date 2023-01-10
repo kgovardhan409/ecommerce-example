@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class SigninComponent {
 
+  myform = {
+    myEmail: '',
+    password: true
+  }
+
+  myEmail ?: string;
+
+  onSbumit(){
+
+    console.log(this.myform);
+  }
+
 }
