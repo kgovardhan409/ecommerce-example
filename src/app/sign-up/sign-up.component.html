@@ -1,67 +1,39 @@
-<div class="container">
+<h1>Reactive Form</h1>
 
-  <h2>Reactive Form</h2>
-
-  <form [formGroup]="signupform">
-
-    <div>
-
-      <div class="cross-validation">
-        <div class="form-group">
-
-          <label for="name">Name</label>
-          <input type="text" id="username" name="username" class="form-control" 
-          formControlName="username" />
-
-          <div *ngIf="f['username'].errors">
-              username is required!
-          </div>
-        </div>
-      </div>
+<form class="p-3" >
+  <div class="form-group my-3">
+    <label for="exampleInputEmail1" class="form-label">Fist Name</label>
+    <input type="Fist Name" class="form-control" id="exampleInputFist Name"
+     aria-describedby="Fist NameHelp" placeholder="Fist Name"
+     formControlName="Fist Name">
+    <div id="Fist NameHelp" class="form-text"></div>
   </div>
-  </form>
+  <form class="p-3" >
+    <div class="form-group my-3">
+      <label for="exampleInputLast Name" class="form-label">Last Name</label>
+      <input type="Last Name" class="form-control" id="exampleInputLast Name"
+       aria-describedby="Last NameHelp" placeholder="Last Name"
+       formControlName="Last Name">
+      <div id="Last NameHelp" class="form-text"></div>
+    </div>
+  <form class="p-3" >
+    <div class="form-group my-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1"
+       aria-describedby="emailHelp" placeholder="Enter email"
+       formControlName="emailID">
+      <div id="emailHelp" class="form-text"></div>
+    </div>
+
+  <div class="form-group my-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
   </div>
-
-  <!-- <div class="form-group">
-            <label for="alterEgo">Alter Ego</label>
-            <input type="text" id="alterEgo" class="form-control"
-                formControlName="alterEgo">
   
-            <div *ngIf="alterEgo.pending">Validating...</div>
-            <div *ngIf="alterEgo.invalid" class="alert alert-danger alter-ego-errors">
-              <div *ngIf="alterEgo.errors?.['uniqueAlterEgo']">
-                Alter ego is already taken.
-              </div>
-            </div>
-          </div>
-  
-          <div *ngIf="heroForm.errors?.['identityRevealed'] && (signupform.touched || signupform.dirty)" class="cross-validation-error-message alert alert-danger">
-              Name cannot match alter ego.
-          </div>
-        </div>
-  
-        <div class="form-group">
-          <label for="power">signupform</label>
-          <select id="power" class="form-control"
-              formControlName="power" required>
-            <option *ngFor="let p of powers" [value]="p">{{p}}</option>
-          </select>
-  
-          <div *ngIf="power.invalid && power.touched" class="alert alert-danger">
-            <div *ngIf="power.errors?.['required']">Power is required.</div>
-          </div>
-        </div> -->
-
-  <!-- <p>Complete the form to enable the Submit button.</p>
-        <button type="submit"
-                class="btn btn-default"
-                [disabled]="heroForm.invalid">Submit</button>
-        <button type="button" class="btn btn-default"
-               (click)="formDir.resetForm({})">Reset</button> -->
-
-
-  <!-- <div class="submitted-message" *ngIf="formDir.submitted">
-    <p>You've submitted your hero, {{ signupform }}!</p>
-    <button type="button" (click)="formDir.resetForm({})">Add new hero</button>
+  <div class="form-group form-check my-3">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
-</div> -->
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
