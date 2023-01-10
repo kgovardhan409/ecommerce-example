@@ -1,4 +1,54 @@
-<p>signin works!</p>
-<h1>hi</h1>
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 shadow p-0">
+            <div class="header-login d-flex py-3 px-0 mx-0">
+                <div>
+                    <button class="btn btn-light text-danger" routerLink="/sign-in"><i class="fa-solid fa-lock"></i>
+                        Sign in</button>
+                </div>
+                <div>
+                    <button class="btn btn-light" routerLink="/sign-up">
+                        <i class="fa-solid fa-user"></i> Sign Up
+                    </button>
+                </div>
+            </div>
+            <form #signInForm="ngForm" (ngSubmit)="onSbumit()">
+                <div class="my-3 px-3 ">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com" name="emailId" [(ngModel)]="myform.myEmail" required
+                        #myEmail="ngModel" [ngClass]="signInForm.submitted && myEmail.errors ? 'invalid': ''">
+                    <div *ngIf="signInForm.submitted && myEmail.errors" class="text-danger">Please provide a valid email
+                        address</div>
+                </div>
+                <div class="mb-3 px-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Password</label>
+                    <input class="form-control" type="password" id="exampleFormControlTextarea1" name="password"
+                        [(ngModel)]="signInForm.submitted && myform.password" required #myPassword="ngModel"
+                        [ngClass]="signInForm.submitted && myPassword.errors ? 'invalid': ''"
+                        placeholder="password" 
+                        />
 
-<button class="btn btn-secondary" routerLink="/sign-up">Sign Up</button>
+                </div>
+                <div class="d-flex justify-content-between px-3" style="display: flex;">
+                    <div class="form-check col">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Enable
+                        </label>
+                    </div>
+                    <div class="col text-end">
+                        <a class="text-danger">Forgot Password</a>
+                    </div>
+                </div>
+
+                <div class="mx-3">
+                    <button class="btn btn-danger text-center my-3 w-100">
+                        Sign in
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
