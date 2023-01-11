@@ -17,4 +17,8 @@ export class SignInService {
     return this.http.post(this.baseUrl+"verifyLogin", data);
   }
 
+  singUp(data: any){
+    return this.http.post(this.baseUrl+"register", data);
+  }
+
 }

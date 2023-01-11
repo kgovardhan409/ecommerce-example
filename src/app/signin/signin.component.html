@@ -23,9 +23,10 @@
                         address</div>
                 </div>
                 <div class="mb-3 px-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Password</label>
-                    <input class="form-control" type="password" id="exampleFormControlTextarea1" name="password"
-                        [(ngModel)]="signInForm.submitted && myform.password" required #password="ngModel"
+                    <label class="form-label">Password</label>
+                    <input class="form-control" type="password" name="password"
+                        required #password="ngModel"
+                        [(ngModel)]="myform.password" 
                         [ngClass]="signInForm.submitted && password.errors ? 'invalid': ''"
                         placeholder="password" 
                         />
