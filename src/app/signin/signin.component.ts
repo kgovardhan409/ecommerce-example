@@ -14,6 +14,8 @@ export class SigninComponent {
     password: ''
   }
 
+  errors: any;
+
   constructor(private signService: SignInService){
 
   }
@@ -27,10 +29,13 @@ export class SigninComponent {
     this.signService.verifySignIn(this.myform).subscribe(
       response => {
         alert("welcome to my page");
+        console.log(response);
       },
-      error => {
-        alert("Not a valid user");
-      }
+      // error => {
+      //   this.errors = error;
+      //   alert("Invalid user entered");
+      //   console.log(this.errors);
+      // }
     )
   }
 

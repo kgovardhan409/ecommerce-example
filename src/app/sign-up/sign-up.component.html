@@ -1,39 +1,54 @@
-<h1>Reactive Form</h1>
-
-<form class="p-3" >
+<form class="p-3" [formGroup]="signupform" (submit)="onSubmit()">
   <div class="form-group my-3">
     <label for="exampleInputEmail1" class="form-label">Fist Name</label>
-    <input type="Fist Name" class="form-control" id="exampleInputFist Name"
-     aria-describedby="Fist NameHelp" placeholder="Fist Name"
-     formControlName="Fist Name">
-    <div id="Fist NameHelp" class="form-text"></div>
+    <input type="Fist Name" class="form-control" id="exampleInputFist Name" aria-describedby="Fist NameHelp"
+      placeholder="Fist Name" formControlName="FistName"
+      [ngClass]="isSubmitted && f['FistName'].errors ? 'invalid': '' ">
+    <div id="Fist NameHelp" class="form-text text-danger" *ngIf="isSubmitted && f['FistName'].errors"> Please enter
+      first name</div>
   </div>
-  <form class="p-3" >
-    <div class="form-group my-3">
-      <label for="exampleInputLast Name" class="form-label">Last Name</label>
-      <input type="Last Name" class="form-control" id="exampleInputLast Name"
-       aria-describedby="Last NameHelp" placeholder="Last Name"
-       formControlName="Last Name">
-      <div id="Last NameHelp" class="form-text"></div>
-    </div>
-  <form class="p-3" >
-    <div class="form-group my-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1"
-       aria-describedby="emailHelp" placeholder="Enter email"
-       formControlName="emailID">
-      <div id="emailHelp" class="form-text"></div>
-    </div>
+
+  <div class="form-group my-3">
+    <label for="exampleInputLast Name" class="form-label">Last Name</label>
+    <input type="Last Name" class="form-control" id="exampleInputLast Name" aria-describedby="Last NameHelp"
+      placeholder="Last Name" formControlName="LastName"
+      [ngClass]="isSubmitted && f['FistName'].errors ? 'invalid': '' ">
+    <div class="form-text text-danger" *ngIf="isSubmitted && f['LastName'].errors"> Please enter Last Name </div>
+  </div>
+
+
+  <div class="form-group my-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      placeholder="Enter email" formControlName="emailID"
+      [ngClass]="isSubmitted && f['emailID'].errors ? 'invalid': '' ">
+    <div class="form-text text-danger" *ngIf="isSubmitted && f['emailID'].errors"> Please enter eamil address </div>
+  </div>
 
   <div class="form-group my-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  
+    <input type="password" class="form-control" id="exampleInputPassword1" 
+    formControlName="password"
+    [ngClass]="isSubmitted && f['password'].errors ? 'invalid': '' ">
+  <div class="form-text text-danger" *ngIf="isSubmitted && f['password'].errors"> Please enter password </div>
+</div>
+
   <div class="form-group form-check my-3">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" 
+    checked
+    >
+    <label class="form-check-label" for="exampleCheck1">Enable</label>
   </div>
-  
-  <button type="submit" class="btn btn-primary">Submit</button>
+
+  <select class="form-select" aria-label="Default select example"
+  formControlName="role"
+  >
+    <option selected="true" value="Admin">Admin</option>
+    <option value="User">User</option>
+    
+  </select>
+
+  <button type="submit" class="btn btn-primary"  >Submit</button>
+  <!-- [disabled]="!signupform.valid"  **** if you want to disable button when invlaid you can add this 
+  attribute -->
 </form>
