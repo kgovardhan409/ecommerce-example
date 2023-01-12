@@ -14,9 +14,10 @@ export class SignUpComponent  implements OnInit{
   signupform : FormGroup = this.fb.group(
    {
     FistName: ['', Validators.required],
-    LastName: ['', Validators.required],
-    emailID: ['', Validators.required],
+    LastName: ['', [Validators.required]],
+    emailID: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
+    confirmPassword: ['', Validators.required],
     role: ['Admin'],
     enable: [true]
     // enable: [false, Validators.required], this is optional so not required validation
@@ -26,7 +27,7 @@ export class SignUpComponent  implements OnInit{
 
   isSubmitted = false;
   
-  constructor(private fb: FormBuilder, private signservice: SignInService){
+  constructor(private fb: FormBuilder, private signInService: SignInService){
 
   }
 
@@ -42,7 +43,15 @@ export class SignUpComponent  implements OnInit{
  onSubmit(){
     this.isSubmitted = true;
     if(this.signupform?.valid){
-      alert("form is submitted");
+      this.signInService.signUp(this.signupform.value).subscribe(
+        response => {
+          console.log(response);
+        },
+        error => {
+          console.log(error);
+          alert(error.message);
+        }
+      );
       console.log(this.signupform.value)
     } else {
       alert("not submitted");
