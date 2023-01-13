@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="col-lg-4"><img src="assets/logo.png" width="200px" class="img-fluid" height="50px"></div>
     <form class="d-flex col-lg-4">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -9,41 +9,45 @@
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" routerLink="/favourites">Favourites</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" routerLink="/sign-in">Sign</a>
+      <li class="nav-item" *ngIf="signInState == 'signout'">
+        <a class="nav-link active" id="signIN" aria-current="page" routerLink="/sign-in">Sign In</a>
+      </li>
+      <li class="nav-item" *ngIf="signInState != 'signin'">
+        <a class="nav-link active" id="signOut" style="cursor: pointer" aria-current="page" (click)="signout()">Sign Out</a>
       </li>
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" routerLink="/cart">Cart</a>
       </li>
     </ul>
-  </nav>
+  </nav> -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
+      <div class="col-lg-4"><img src="assets/logo.png" width="200px" class="img-fluid" height="50px"></div>
+    <form class="d-flex col-lg-4">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+      <div class="collapse navbar-collapse ps-5" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">SHOP</a>
+            <a class="nav-link active" aria-current="page" routerLink="/favourites">Favourites</a>
+          </li>
+          <li class="nav-item" *ngIf="signInState == 'signout'">
+            <a class="nav-link active" id="signIN" aria-current="page" routerLink="/sign-in">Sign In</a>
+          </li>
+          <li class="nav-item" *ngIf="signInState != 'signin'">
+            <a class="nav-link active" id="signOut" style="cursor: pointer" aria-current="page" (click)="signout()">Sign Out</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">ACCOUNT</a>
+            <a class="nav-link active" aria-current="page" routerLink="/cart">Cart</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">PAGE</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">GIOG</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">DOCS / COMPONENTS</a>
-          </li>
-            
-          
           
         </ul>
         

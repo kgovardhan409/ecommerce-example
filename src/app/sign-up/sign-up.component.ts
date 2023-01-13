@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 import { SignInService } from '../services/sign-in.service';
 
 @Component({
@@ -13,21 +14,21 @@ export class SignUpComponent  implements OnInit{
 
   signupform : FormGroup = this.fb.group(
    {
-    FistName: ['', Validators.required],
-    LastName: ['', [Validators.required]],
-    emailID: ['', [Validators.required, Validators.email]],
+    firstName: ['', Validators.required],
+    lastName: ['', [Validators.required]],
+    email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
-    confirmPassword: ['', Validators.required],
+    matchingPassword: ['', Validators.required],
     role: ['Admin'],
-    enable: [true]
-    // enable: [false, Validators.required], this is optional so not required validation
    }
 
   )
 
   isSubmitted = false;
   
-  constructor(private fb: FormBuilder, private signInService: SignInService){
+  constructor(private fb: FormBuilder, private signInService: SignInService,
+    private router: Router
+    ){
 
   }
 
@@ -45,7 +46,13 @@ export class SignUpComponent  implements OnInit{
     if(this.signupform?.valid){
       this.signInService.signUp(this.signupform.value).subscribe(
         response => {
-          console.log(response);
+          if(response.success){
+            alert("Registered Succeffully, please login with yout maild ID and password");
+            // this.router.navigateByUrl('/sign-up');
+            this.router.navigate(['sign-in']);
+          } else {
+            alert("Something went wrong,Please try again")
+          }
         },
         error => {
           console.log(error);
