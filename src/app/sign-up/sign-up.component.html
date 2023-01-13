@@ -16,9 +16,9 @@
         <div class="form-group my-3">
           <label for="exampleInputEmail1" class="form-label">Fist Name</label>
           <input type="Fist Name" class="form-control" id="exampleInputFist Name" aria-describedby="Fist NameHelp"
-            placeholder="Fist Name" formControlName="FistName"
-            [ngClass]="isSubmitted && f['FistName'].errors ? 'invalid': '' ">
-          <div id="Fist NameHelp" class="form-text text-danger" *ngIf="isSubmitted && f['FistName'].errors"> Please
+            placeholder="Fist Name" formControlName="firstName"
+            [ngClass]="isSubmitted && f['firstName'].errors ? 'invalid': '' ">
+          <div id="Fist NameHelp" class="form-text text-danger" *ngIf="isSubmitted && f['firstName'].errors"> Please
             enter
             first name</div>
         </div>
@@ -26,38 +26,35 @@
         <div class="form-group my-3">
           <label for="exampleInputLast Name" class="form-label">Last Name</label>
           <input type="Last Name" class="form-control" id="exampleInputLast Name" aria-describedby="Last NameHelp"
-            placeholder="Last Name" formControlName="LastName"
-            [ngClass]="isSubmitted && f['FistName'].errors ? 'invalid': '' ">
-          <div class="form-text text-danger" *ngIf="isSubmitted && f['LastName'].errors"> Please enter Last Name </div>
+            placeholder="Last Name" formControlName="lastName"
+            [ngClass]="isSubmitted && f['lastName'].errors ? 'invalid': '' ">
+          <div class="form-text text-danger" *ngIf="isSubmitted && f['lastName'].errors"> Please enter Last Name </div>
         </div>
 
 
         <div class="form-group my-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Enter email" formControlName="emailID"
-            [ngClass]="isSubmitted && f['emailID'].errors ? 'invalid': '' ">
-          <div class="form-text text-danger" *ngIf="isSubmitted && f['emailID'].errors"> Please enter eamil address
+            placeholder="Enter email" formControlName="email"
+            [ngClass]="isSubmitted && f['email'].errors ? 'invalid': '' ">
+          <div class="form-text text-danger" *ngIf="isSubmitted && f['email'].errors"> Please enter eamil address
           </div>
         </div>
 
         <div class="form-group my-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password"
+          <input type="password" class="form-control" id="exampleInputPassword1" 
+            formControlName="password"
             [ngClass]="isSubmitted && f['password'].errors ? 'invalid': '' ">
           <div class="form-text text-danger" *ngIf="isSubmitted && f['password'].errors"> Please enter password </div>
         </div>
 
         <div class="form-group my-3">
-          <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" formControlName="confirmPassword"
-            [ngClass]="isSubmitted && f['confirmPassword'].errors ? 'invalid': '' ">
-          <div class="form-text text-danger" *ngIf="isSubmitted && f['confirmPassword'].errors"> Please enter confirm password </div>
-        </div>
-
-        <div class="form-group form-check my-3">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
-          <label class="form-check-label" for="exampleCheck1">Enable</label>
+          <label for="matchingPassword" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="matchingPassword"
+            formControlName="matchingPassword"
+            [ngClass]="isSubmitted && f['matchingPassword'].errors ? 'invalid': '' ">
+          <div class="form-text text-danger" *ngIf="isSubmitted && f['matchingPassword'].errors"> Please enter confirm password </div>
         </div>
 
         <select class="form-select" aria-label="Default select example" formControlName="role">

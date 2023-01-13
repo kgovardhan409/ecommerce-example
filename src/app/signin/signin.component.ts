@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { signIn } from '../models/sign-in.model';
 import { SignInService } from '../services/sign-in.service';
 
@@ -16,7 +17,9 @@ export class SigninComponent {
 
   errors: any;
 
-  constructor(private signService: SignInService){
+  constructor(private signService: SignInService,
+    private router: Router
+    ){
 
   }
 
@@ -28,14 +31,24 @@ export class SigninComponent {
 
     this.signService.verifySignIn(this.myform).subscribe(
       response => {
-        alert("welcome to my page");
-        console.log(response);
+        if(response.success){
+          alert("welcome to my page");
+          this.signService.setAuthorization(true);
+          this.router.navigate(['home']);
+          console.log(response);
+        } else {
+          this.signService.setAuthorization(false);
+          alert("Bad credentials");
+          console.log(response);
+        }
+        
       },
-      // error => {
-      //   this.errors = error;
-      //   alert("Invalid user entered");
-      //   console.log(this.errors);
-      // }
+      error => {
+        this.errors = error;
+        alert("Some back end error!!");
+        this.signService.setAuthorization(false);
+        console.log(this.errors);
+      }
     )
   }
 
