@@ -11,9 +11,11 @@ import { SignInService } from '../services/sign-in.service';
 export class SigninComponent {
 
   myform: signIn = {
-    email: '',
+    username: '',
     password: ''
   }
+
+  signIn = false;
 
   errors: any;
 
@@ -31,23 +33,16 @@ export class SigninComponent {
 
     this.signService.verifySignIn(this.myform).subscribe(
       response => {
-        if(response.success){
           alert("welcome to my page");
           this.signService.setAuthorization(true);
           this.router.navigate(['home']);
           console.log(response);
-        } else {
-          this.signService.setAuthorization(false);
-          alert("Bad credentials");
-          console.log(response);
-        }
-        
+          this.signIn = true;
       },
       error => {
-        this.errors = error;
-        alert("Some back end error!!");
         this.signService.setAuthorization(false);
-        console.log(this.errors);
+          alert(error.message);
+          console.log(error);
       }
     )
   }

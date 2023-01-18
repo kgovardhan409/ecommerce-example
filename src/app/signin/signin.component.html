@@ -14,13 +14,12 @@
             </div>
             <form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSbumit()">
                 <div class="my-3 px-3 ">
-                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <label for="exampleFormControlInput1" class="form-label">Username</label>
                     <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com" name="emailId" [(ngModel)]="myform.email" 
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required
-                        #email="ngModel" [ngClass]="signInForm.submitted && email.errors ? 'invalid': ''">
-                    <div *ngIf="signInForm.submitted && email.errors" class="text-danger">Please provide a valid email
-                        address</div>
+                        placeholder="username" name="emailId" [(ngModel)]="myform.username" 
+                         required
+                        #username="ngModel" [ngClass]="signInForm.submitted && username.errors ? 'invalid': ''">
+                    <div *ngIf="signInForm.submitted && username.errors" class="text-danger">Please provide a valid username</div>
                 </div>
                 <div class="mb-3 px-3">
                     <label class="form-label">Password</label>

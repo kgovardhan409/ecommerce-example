@@ -48,7 +48,6 @@ export class SignUpComponent  implements OnInit{
         response => {
           if(response.success){
             alert("Registered Succeffully, please login with yout maild ID and password");
-            // this.router.navigateByUrl('/sign-up');
             this.router.navigate(['sign-in']);
           } else {
             alert("Something went wrong,Please try again")
@@ -59,7 +58,7 @@ export class SignUpComponent  implements OnInit{
           alert(error.message);
         }
       );
-      console.log(this.signupform.value)
+      this.router.navigate(['sign-in']);
     } else {
       alert("not submitted");
     }
