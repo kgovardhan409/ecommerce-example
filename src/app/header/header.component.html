@@ -37,16 +37,16 @@
             <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="/favourites">Favourites</a>
-          </li>
-          <li class="nav-item" *ngIf="signInState == 'signout'">
-            <a class="nav-link active" id="signIN" aria-current="page" routerLink="/sign-in">Sign In</a>
+            <a class="nav-link active" aria-current="page" routerLink="/home/favourites">Favourites</a>
           </li>
           <li class="nav-item" *ngIf="signInState != 'signin'">
             <a class="nav-link active" id="signOut" style="cursor: pointer" aria-current="page" (click)="signout()">Sign Out</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="/cart">Cart</a>
+            <a class="nav-link active" aria-current="page" href="#">GIOG</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/home/cart">Cart</a>
           </li>
           
         </ul>

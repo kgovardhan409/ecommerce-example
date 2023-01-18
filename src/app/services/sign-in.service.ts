@@ -20,7 +20,8 @@ export class SignInService {
 
 
   verifySignIn(data: signIn): Observable<any>{
-    return this.http.post(this.baseUrl+"verifyLogin", data);
+    // return this.http.post(this.baseUrl+"verifyLogin", data);
+    return this.http.post('https://dummyjson.com/auth/login', data)
   }
 
   signUp(data: any): Observable<any>{
@@ -28,7 +29,7 @@ export class SignInService {
   }
 
   setAuthorization(signIn: boolean){
-    this.isLoggedIN = signIn;
+    this.isLoggedIN = signIn; // true/false - correct - true, wrong credentials - false
     
     signIn ? this.signState.next('signin') : this.signState.next('singout')
     
