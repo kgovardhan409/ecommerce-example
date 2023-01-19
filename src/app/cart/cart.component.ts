@@ -10,7 +10,8 @@ export class CartComponent implements OnInit {
   price1:number = 154 ;
   price2:number = 9;
 
-  dummydata:any = [];
+  dummydata:any;
+  products: any[] = [];
   constructor(private cartService: CartService){
 
   }
@@ -18,8 +19,7 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     this.cartService.getData()
       .subscribe(response => {
-        this.dummydata = response;
-        console.log(this.dummydata["carts"]);
+        this.products = response.carts[0].products;
       });
 }
 }
