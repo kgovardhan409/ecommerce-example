@@ -14,7 +14,7 @@
   <div class="container gap">
     <div class="row">
       <div class="col-lg-8">
-        <div class="row py-3" style="border-bottom: 1px solid grey;" *ngFor="let dd of dummydata.carts[0].products">
+        <div class="row py-3" style="border-bottom: 1px solid grey;" *ngFor="let dd of products">
           
           <div class="col-lg-9">
             <div class="row align-items-center">
@@ -151,17 +151,5 @@
 </div>
 
 <div>
-  API DATA
-  <ul>
-    <li *ngFor="let dd of dummydata.carts">
-      {{ dd.id }}
-      {{dd.userId}}
-      {{dd.products[1].title}}
-      {{dd.products[2].price}}
-      <!-- {{dd.products[3]}} -->
-      <!-- {{dd.title}}
-      {{dd.price}}
-      {{dd.quantity}} -->
-    </li>
-  </ul>
+
 </div>
