@@ -1,31 +1,32 @@
-<div class="container-fluid" style="font-size: small;">
-  <div class=" row bg-dark text-light">
+<div class="container-fluid" style="font-size: small">
+  <div class="row bg-dark text-light">
     <div class="ps-5 pb-2">
       <h2>Your Cart</h2>
     </div>
-    <div class="ps-5 pt-3 pb-2 row  justify-content-between">
-      <div class="col-lg-3" style="font-size: small;">Your products</div>
+    <div class="ps-5 pt-3 pb-2 row justify-content-between">
+      <div class="col-lg-3" style="font-size: small">Your products</div>
       <div class="col-lg-3">
-        <button class="btn btn-danger"> Continue Shopping</button>
+        <button class="btn btn-danger">Continue Shopping</button>
       </div>
     </div>
   </div>
 
-
   <div class="container gap">
     <div class="row">
       <div class="col-lg-8">
-        <div class="row">
+        <div class="row py-3" style="border-bottom: 1px solid grey;" *ngFor="let dd of dummydata.carts[0].products">
+          
           <div class="col-lg-9">
             <div class="row align-items-center">
               <div class="col-lg-3">
-                <img src="../../assets/01.jpg" style="width:  150px; height:  120px;" />
+                <img
+                  src="../../assets/backpack.jpg"
+                  style="width: 150px; height: 120px"
+                />
               </div>
               <div class="col-lg-9">
-                <div class="fw-bolder">Women Colorblock Sneakers</div>
-                <div>size: 8.5</div>
-                <div>color: white</div>
-                <div class="text-primary">{{price1 | currency}}</div>
+                <div class="fw-bolder">{{dd.title}}</div>
+                <div class="text-primary">{{ dd.price | currency }}</div>
               </div>
             </div>
           </div>
@@ -33,96 +34,103 @@
             <div class="col">
               <div>Quantity</div>
               <div class="input-group mb-3">
-                <!-- <label class="input-group-text" for="inputGroupSelect01">Options</label> -->
-                <input type="text" value="1" class="form-control">
-              </div>
-              <div class="text-danger">
-                
-                <button type="button" class="btn btn-outline-danger" style="border: 0px;"><i class="fa-solid fa-remove fa-1x" style="padding: 5px;"></i> Remove</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="row mt-5">
-          <div class="col-lg-9">
-            <div class="row align-items-center">
-              <div class="col-lg-3">
-                <img src="../../assets/01.jpg" style="width:  150px; height:  120px;" />
-              </div>
-              <div class="col-lg-9">
-                <div class="fw-bolder">Women Colorblock Sneakers</div>
-                <div>size: 8.5</div>
-                <div>color: white</div>
-                <div class="text-primary">{{price1 | currency}}</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="col">
-              <div>Quantity</div>
-              <div class="input-group mb-3">
-                <!-- <label class="input-group-text" for="inputGroupSelect01">Options</label> -->
-                <input type="text" value="1" class="form-control">
-              </div>
-              <div class="text-danger">
-                
-                <button type="button" class="btn btn-outline-danger" style="border: 0px;"><i class="fa-solid fa-remove fa-1x" style="padding: 5px;"></i> Remove</button>
-              </div>
-            </div>
-          </div>
-        </div>
 
+                <!-- <label class="input-group-text" for="inputGroupSelect01">Options</label> -->
+                <input type="text" value={{dd.quantity}} class="form-control" />
+              </div>
+              <div class="text-danger">
+                <button
+                  type="button"
+                  class="btn btn-outline-danger"
+                  style="border: 0px"
+                >
+                  <i class="fa-solid fa-remove fa-1x" style="padding: 5px"></i>
+                  Remove
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
 
       </div>
       <div class="col-lg-4 p-4">
         <div class="card shadow">
           <div class="card-body">
             <h5 class="card-title text-center">Sub Total</h5>
-            <p class="card-text h1 text-center">{{price1+price2 | currency}}</p>
-            <hr>
+            <p class="card-text h1 text-center">
+              {{ price1 + price2 | currency }}
+            </p>
+            <hr />
             <div>
               <span class="bg-primary p-1 me-1 text-light">Note </span>
-              <label >Additional Comments</label>
+              <label>Additional Comments</label>
               <div class="mt-3">
                 <textarea class="form-control"></textarea>
-  
               </div>
             </div>
 
             <div class="accordion mt-4" id="accordionExample">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
                     Apply Promo Code
                   </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample"
+                >
                   <div class="accordion-body">
                     <div class="form-group">
-                      <input placeholder="Promo Code" class="form-control" >
+                      <input placeholder="Promo Code" class="form-control" />
                     </div>
-                    <button type="button" class="btn btn-outline-danger mt-3">Apply
-                      PromoCode</button>
+                    <button type="button" class="btn btn-outline-danger mt-3">
+                      Apply PromoCode
+                    </button>
                   </div>
                 </div>
               </div>
               <div class="accordion-item">
                 <h2 class="accordion-header" id="headingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
                     Shipping Estimates
                   </button>
                 </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#accordionExample"
+                >
                   <div class="accordion-body">
-                    Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+                    Lorem ipsum is placeholder text commonly used in the
+                    graphic, print, and publishing industries for previewing
+                    layouts and visual mockups.
                   </div>
                 </div>
               </div>
-              
             </div>
             <div class="card-body">
-              <button type="button" class="btn btn-danger">Proceed to Checkout</button>
+              <button type="button" class="btn btn-danger">
+                Proceed to Checkout
+              </button>
             </div>
             <!-- <div>
               <div style="padding: 5px;">Apply PromoCode<button><i class="fa-solid fa-angle-up"></i></button> </div>
@@ -140,3 +148,20 @@
       </div>
     </div>
   </div>
+</div>
+
+<div>
+  API DATA
+  <ul>
+    <li *ngFor="let dd of dummydata.carts">
+      {{ dd.id }}
+      {{dd.userId}}
+      {{dd.products[1].title}}
+      {{dd.products[2].price}}
+      <!-- {{dd.products[3]}} -->
+      <!-- {{dd.title}}
+      {{dd.price}}
+      {{dd.quantity}} -->
+    </li>
+  </ul>
+</div>
